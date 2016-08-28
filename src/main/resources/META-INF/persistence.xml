@@ -13,13 +13,14 @@
       <property name="eclipselink.target-database" value="MySQL"/>
       <property name="eclipselink.ddl-generation" value="create-tables"/>
       <property name="eclipselink.weaving" value="true"/>
+      <property name="eclipselink.canonicalmodel.subpackage" value="prod"/>
       <!-- Statement cache -->
       <property name="eclipselink.jdbc.cache-statements" value="true"/>
       <!-- Batch writing -->
       <property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
       <property name="eclipselink.jdbc.batch-writing.size" value="1000"/>
       <!-- Disable caching for batch insert (caching only improves reads, so only adds overhead for inserts) -->
-        <property name="eclipselink.cache.shared.default" value="false"/>
+      <property name="eclipselink.cache.shared.default" value="false"/>
       <!-- -->
       <!-- Disable logging feature on prod environment -->
       <property name="eclipselink.logging.level" value="OFF"/>
@@ -38,6 +39,7 @@
       <property name="eclipselink.target-database" value="Derby"/>
       <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
       <property name="eclipselink.weaving" value="static"/>
+      <property name="eclipselink.canonicalmodel.subpackage" value="dev"/>
     </properties>
   </persistence-unit>
   
@@ -53,6 +55,7 @@
       <property name="eclipselink.target-database" value="Derby"/>
       <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
       <property name="eclipselink.weaving" value="static"/>
+      <property name="eclipselink.canonicalmodel.subpackage" value="test"/>
       <property name="eclipselink.logging.logger" value="DefaultLogger"/>
       <property name="eclipselink.logging.level" value="FINEST"/>
       <property name="eclipselink.logging.sql" value="FINEST"/>

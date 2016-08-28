@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.time.ZoneId;
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -41,12 +42,14 @@ public class ProfileRule implements Serializable {
     @Basic
     private Boolean active;
     
+    @Convert(converter = LocalTimeConverter.class)
     @Temporal(TemporalType.TIME)
     @Column(name = "begin_time")
     private LocalTime beginTime;
     
+    @Convert(converter = LocalTimeConverter.class)
     @Temporal(TemporalType.TIME)
-    @Column(name = "begin_time")
+    @Column(name = "end_time")
     private LocalTime endTime;
     
     @Column(name = "warning_value")
